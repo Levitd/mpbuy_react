@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import withRedux from "./hoc/withRedux";
+import withRouter from "./hoc/withRouter";
+import AppLoader from "./hoc/appLoader";
+import {Route, Routes} from "react-router-dom";
+import MainPage from "./layout/mainPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <AppLoader>
+          <Routes>
+              <Route path="/" element={<MainPage/> } />
+          </Routes>
+      </AppLoader>
   );
 }
 
-export default App;
+const AppWithStoreAndRoutes = withRedux(withRouter(App));
+export default AppWithStoreAndRoutes;
