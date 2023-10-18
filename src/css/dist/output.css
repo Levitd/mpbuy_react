@@ -824,6 +824,10 @@ select {
   display: inline;
 }
 
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
@@ -838,6 +842,14 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.basis-1\/4 {
+  flex-basis: 25%;
+}
+
+.basis-2\/4 {
+  flex-basis: 50%;
 }
 
 @-webkit-keyframes spin {
@@ -867,8 +879,27 @@ select {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
 .gap-2 {
   gap: 0.5rem;
+}
+
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-blue-200 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(191 219 254 / var(--tw-divide-opacity));
 }
 
 .rounded {
@@ -947,6 +978,11 @@ select {
 .text-zinc-800 {
   --tw-text-opacity: 1;
   color: rgb(39 39 42 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .shadow-md {

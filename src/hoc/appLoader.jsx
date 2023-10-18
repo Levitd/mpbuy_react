@@ -5,22 +5,23 @@ import {dayStatGet, getDayStatIsLoading} from "../store/dayStatistic";
 import SpinnerLader from "../components/SpinnerLoader";
 
 const AppLoader = ({ children }) => {
-    const dispatch = useDispatch();
-    // const location = useLocation();
-    const dayStatisticLoading = useSelector(getDayStatIsLoading());
-    // const [statLoad, setStatLoad] = useState(dayStatisticLoading);
-
-    useEffect(() => {
-        if (!dayStatisticLoading) {
-            dispatch(dayStatGet());
-        }
-    }, []);
+    // const dispatch = useDispatch();
+    // // const location = useLocation();
+    // const dayStatisticLoading = useSelector(getDayStatIsLoading());
+    // // const [statLoad, setStatLoad] = useState(dayStatisticLoading);
+    //
+    // useEffect(() => {
+    //     if (!dayStatisticLoading) {
+    //         dispatch(dayStatGet());
+    //     }
+    // }, []);
     return (
         <>
-            {dayStatisticLoading && <SpinnerLader />}
-            {!dayStatisticLoading &&
-                children
-            }
+            {/*{dayStatisticLoading && <SpinnerLader />}*/}
+            {/*{!dayStatisticLoading &&*/}
+            {/*    children*/}
+            {/*}*/}
+            {children}
         </>
     );
 };

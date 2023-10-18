@@ -1,11 +1,12 @@
 import React from "react";
 import DashBoard from "./dashboard";
+import DayStatistic from "../components/pages/dayStatistic";
 
 const DashboardConteiner = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             <DashBoard title={"Cтатистика за день"} addStyle="md:row-span-2">
-                <div>Купили:<span className="text-zinc-800">84</span></div>
+                <DayStatistic/>
             </DashBoard>
             <DashBoard title={"Заказы"} />
             <DashBoard title={"Выкупы"} addStyle="md:order-1" />
